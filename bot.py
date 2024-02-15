@@ -2,8 +2,8 @@ import discord
 import commands
 
 
-TESTING_CHANNEL = 1133962092475588720
-FUNCTION_CHANNEL = 1075962461695524905
+
+FUNCTION_CHANNEL = 1051735080294432838
 
 async def run_command(message, user_message):
     try:
@@ -23,9 +23,9 @@ def run_discord_bot():
     
     @client.event
     async def on_ready():
-        print("Palworld bot is now running")
+        print("Bot is now running")
         channel = client.get_channel(FUNCTION_CHANNEL)
-        await channel.send("Monkey Bot is now awake!")
+        await channel.send("Sphincter is now awake!")
         
     @client.event
     async def on_message(message):
