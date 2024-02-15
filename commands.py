@@ -6,6 +6,8 @@ from requests import get
 import sys
 import CONSTANTS
 
+
+
 ip = get('https://api.ipify.org').content.decode('utf8')
 
 
@@ -29,12 +31,15 @@ async def handle_response(message_obj, user_message):
     
     if p_message == '*open':
         if(CONSTANTS.PROGRAM_NAME in (p.name() for p in psutil.process_iter())):
-            await message_obj.channel.send("Minecraft server is already open on IP: " + str(ip) + ":8211")
+            await message_obj.channel.send("Minecraft server is already open on IP: " + str(ip) + ":27015")
             return 1
         else:
             servers.start_minecraft_server()
-            await message_obj.channel.send("Minecraft server now open! Join on IP: " + str(ip) + ":8211")
+            await message_obj.channel.send("Minecraft server now open! Join on IP: " + str(ip) + ":27015")
             return 1
+    
+    if p_message == '*ip':
+        await message_obj.channel.send("The IP for the minecraft server is " + str(ip) + ":27015")
     
     
     
